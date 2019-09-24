@@ -1,5 +1,7 @@
+require('dotenv').config()
+
 var GoogleSpreadsheet = require('google-spreadsheet');
-var doc = new GoogleSpreadsheet('YOUR_SPREADSHEET_ID'); // needs to be publicly available
+var doc = new GoogleSpreadsheet(process.env.SPREADSHEET_KEY);
 
 doc.getInfo((_, info) => {
   sheet = info.worksheets[0];
